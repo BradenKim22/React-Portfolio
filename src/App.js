@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import About from './components/about-me';
+import Portfolio from './components/portfolio';
+import Contact from './components/contact';
+import Resume from './components/resume';
+import { ResumeNoDefault } from './components/resume';
 
 function App() {
   return (
