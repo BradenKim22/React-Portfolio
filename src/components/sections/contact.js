@@ -1,4 +1,10 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
+export default function Contact() {
+    return (
+        <p>This is Contact</p>
+    )
+};
 
 // function contactForm() {
 //   const [firstName, setFirstName] = useState("");

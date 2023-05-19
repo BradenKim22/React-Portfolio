@@ -1,49 +1,75 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState } from "react";
 
 function Nav() {
-  const linkStyle = { border: "1px black", padding: "5px" };
+  const styles = {
+    nav: {
+      display: "flex",
+      justifyContent: "space-evenly",
+      width: "30%",
+    },
+    link: {
+      textDecoration: "none",
+      fontSize: "16pt",
+      fontFamily: "sans-serif",
+      padding: "1%",
+      cursor: "pointer",
+      color: "black"
+    },
+    activeLink: {
+      textDecoration: "none",
+      fontSize: "16pt",
+      fontFamily: "sans-serif",
+      padding: "1%",
+      cursor: "pointer",
+      color: "orange",
+      backgroundColor: "black",
+      borderRadius: "8px"
+    },
+  };
 
-  // const [selectedLink, setSelectedLink] = useState("about-me");
+  const [selectedLink, setSelectedLink] = useState("about-me");
 
-  // const isSelected = (value: string): boolean => selectedLink === value;
-
-  // const handleLinkClick = (e: ChangeEvent<HTMLAElement>): void =>
-  //   setSelectedLink(e.current.value);
+  const handleLinkClick = (e) => {
+    const { name } = e.target;
+    setSelectedLink(name);
+  };
 
   return (
-    <nav className="main-header-menu">
-      <section
-        style={{
-          display: "flex",
-          fontFamily: "helvetica",
-          flexDirection: "row",
-          alignItems: "flex-start",
-          justifyContent: "flex-start",
-        }}
+    <nav style={styles.nav}>
+      <a
+        href="#about-me"
+        name="about-me"
+        onClick={handleLinkClick}
+        style={selectedLink === "about-me" ? styles.activeLink : styles.link}
       >
-        <div style={linkStyle}>
-          <a
-            href="#"
-            value="about-me"
-            // checked={isSelected("about-me")}
-            // onChange={handleLinkClick}
-          >
-            About Me
-          </a>
-        </div>
-        <div style={linkStyle}>
-          <a href="#">Portfolio</a>
-        </div>
-        <div style={linkStyle}>
-          <a href="#">Contact Me</a>
-        </div>
-        <div style={linkStyle}>
-          <a href="#">Resume</a>
-        </div>
-      </section>
+        About Me
+      </a>
+      <a
+        href="#portfolio"
+        name="portfolio"
+        onClick={handleLinkClick}
+        style={selectedLink === "portfolio" ? styles.activeLink : styles.link}
+      >
+        Portfolio
+      </a>
+      <a
+        href="#contact"
+        name="contact"
+        onClick={handleLinkClick}
+        style={selectedLink === "contact" ? styles.activeLink : styles.link}
+      >
+        Contact Me
+      </a>
+      <a
+        href="#resume"
+        name="resume"
+        onClick={handleLinkClick}
+        style={selectedLink === "resume" ? styles.activeLink : styles.link}
+      >
+        Resume
+      </a>
     </nav>
   );
-};
-
+}
 
 export default Nav;
