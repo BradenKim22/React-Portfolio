@@ -17,6 +17,7 @@ export default function Header({handleLinkClick, selectedLink}) {
     },
     name: {
       fontSize: "300%",
+      fontFamily: "sans-serif",
       color: "black",
     },
     nav: {
@@ -57,7 +58,7 @@ export default function Header({handleLinkClick, selectedLink}) {
       <h1 style={styles.name}>Braden Kim</h1>
       <nav style={styles.nav}>
         <a
-          href="#about-me"
+          // href="#about-me"
           name="about-me"
           onClick={handleLinkClick}
           style={selectedLink === "about-me" ? styles.activeLink : styles.link}
@@ -65,7 +66,7 @@ export default function Header({handleLinkClick, selectedLink}) {
           About Me
         </a>
         <a
-          href="#portfolio"
+          // href="#portfolio"
           name="portfolio"
           onClick={handleLinkClick}
           style={selectedLink === "portfolio" ? styles.activeLink : styles.link}
@@ -73,7 +74,7 @@ export default function Header({handleLinkClick, selectedLink}) {
           Portfolio
         </a>
         <a
-          href="#contact"
+          // href="#contact"
           name="contact"
           onClick={handleLinkClick}
           style={selectedLink === "contact" ? styles.activeLink : styles.link}
@@ -81,7 +82,7 @@ export default function Header({handleLinkClick, selectedLink}) {
           Contact Me
         </a>
         <a
-          href="#resume"
+          // href="#resume"
           name="resume"
           onClick={handleLinkClick}
           style={selectedLink === "resume" ? styles.activeLink : styles.link}
