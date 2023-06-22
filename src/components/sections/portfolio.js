@@ -1,7 +1,11 @@
-import React from 'react';
-// My Portfolio
+import React, { useState, useEffect } from "react";
+
+// Basic uploading pictures and viewing them on the front end.
 export default function Portfolio() {
-    return (
-        <p>This is Portfolio</p>
-    )
-};
+
+  return (
+    <div>
+      <h2>Hello Y'all</h2>
+    </div>
+  );
+}
