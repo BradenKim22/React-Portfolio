@@ -1,5 +1,14 @@
-import React, { useState, useEffect } from "react";
-import placeholder from "../assets/profile-image.png";
+import React from "react";
+// import GonFit from "../assets/gonfit.png";
+import Musinion from "../assets/musinion.png";
+import TechBlog from "../assets/techblog.png";
+import SkyJam from "../assets/skyjam.png";
+import WeatherDash from "../assets/weatherdash.png";
+import CodeQuiz from "../assets/codequiz.png";
+import NoteKeeper from "../assets/notekeeper.png";
+import Business from "../assets/businessmanager.png";
+import ReadmeGen from "../assets/readmegen.png";
+import ComingSoon from "../assets/comingsoon.png";
 
 const styles = {
   portfolioMain: {
@@ -39,7 +48,7 @@ const styles = {
     right: "5%",
     borderRadius: "5px",
     backgroundColor: "orange",
-    opacity: "80%",
+    opacity: "70%",
     padding: "3px"
   },
   projectTitle: {
@@ -60,65 +69,65 @@ const projects = [
   {
     title: "GoN'Fit",
     description: "Coming Soon",
-    image: placeholder,
+    image: ComingSoon,
     deployed: "comingsoon",
     github: "comingsoon"
   },
   {
     title: "Musinion",
     description: "Social media platform to read and post reviews about albums",
-    image: "image 2",
-    deployed: "deployed 2",
-    github: "github 2"
+    image: Musinion,
+    deployed: "https://musinion.herokuapp.com/",
+    github: "https://github.com/Teaom/Musinion"
   },
   {
     title: "TechBlog",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Platform for tech bloggers and readers",
+    image: TechBlog,
+    deployed: "https://fathomless-eyrie-09842.herokuapp.com/",
+    github: "https://github.com/BradenKim22/mvc-blog"
   },
   {
     title: "SkyJam",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Music generator based on the weather",
+    image: SkyJam,
+    deployed: "https://j3rkstore.github.io/weatheringo/",
+    github: "https://github.com/J3rkStore/weatheringo"
   },
   {
     title: "WeatherDash",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Weather dashboard using OpenWeatherAPI",
+    image: WeatherDash,
+    deployed: "https://bradenkim22.github.io/on-the-go-weather/",
+    github: "https://github.com/BradenKim22/on-the-go-weather"
   },
   {
     title: "CodeQuiz",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Simple quiz testing Full-Stack bootcamp classmates",
+    image: CodeQuiz,
+    deployed: "https://bradenkim22.github.io/multiple-guess/",
+    github: "https://github.com/BradenKim22/multiple-guess"
   },
   {
     title: "NoteKeeper",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Notebook application using CRUD operations",
+    image: NoteKeeper,
+    deployed: "https://hidden-meadow-67344.herokuapp.com/",
+    github: "https://github.com/BradenKim22/backpack-note"
   },
   {
     title: "BusinessManager",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Backend navigator using CRUD operations for business management",
+    image: Business,
+    deployed: "https://app.screencastify.com/manage/videos/4H9EO4hoZs6Nu2pawCBx",
+    github: "https://github.com/BradenKim22/business-management"
   },
   {
     title: "ReadmeGen",
-    description: "description 3",
-    image: "image 3",
-    deployed: "deployed 3",
-    github: "github 3"
+    description: "Generate a README.md file using Node.js",
+    image: ReadmeGen,
+    deployed: "https://app.screencastify.com/manage/videos/6a32j7MUZwEHPaj6BMtB",
+    github: "https://github.com/BradenKim22/node-more-please"
   },
 ]
 
@@ -126,14 +135,14 @@ const projects = [
 export default function Portfolio() {
   const projectData = projects.map((project) => 
   <div style={styles.projectCard}>
-    <a href={project.deployed} style={styles.deployedBox}>
+    <a href={project.deployed} target="_blank" style={styles.deployedBox}>
       <img src={project.image} style={styles.projectImage}></img>
       <div style={styles.descriptionBox}>
         <h3 style={styles.projectTitle}>{project.title}</h3>
-        <p style={styles.projectText}>{project.description}</p>
+        {/* <p style={styles.projectText}>{project.description}</p> */}
       </div>
     </a>
-    <a href={project.github} style={styles.githubBox}>
+    <a href={project.github} target="_blank" style={styles.githubBox}>
       <h4 style={styles.projectTitle}>GitHub</h4>
     </a>
   </div>
