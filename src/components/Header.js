@@ -16,7 +16,7 @@ export default function Header({handleLinkClick, selectedLink}) {
       borderRadius: 50,
     },
     name: {
-      fontSize: "300%",
+      fontSize: "34pt",
       fontFamily: "sans-serif",
       color: "black",
     },

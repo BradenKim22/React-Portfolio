@@ -61,7 +61,7 @@ const meSections = [
   }
 ];
 
-// About Me _______________________________________________REFACTOR TO MAKE IT MAP OUT AN ARRAY OF OBJECTS_______________________________________________
+// About Me
 export default function About() {
   const aboutMeData = meSections.map((section, index) => {
     // IF the meSection index is 0 or even number then do this..
