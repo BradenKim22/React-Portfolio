@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import profileImage from "./assets/profile-image.png";
 
 export default function Header({handleLinkClick, selectedLink}) {

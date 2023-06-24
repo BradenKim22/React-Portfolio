@@ -11,6 +11,10 @@ import ReadmeGen from "../assets/readmegen.png";
 import ComingSoon from "../assets/comingsoon.png";
 
 const styles = {
+  mywork: {
+    fontFamily: "sans-serif",
+    fontSize: "22pt"
+  },
   portfolioMain: {
     display: "flex",
     flexDirection: "column",
@@ -32,14 +36,15 @@ const styles = {
   },
   deployedBox: {
     position: "relative",
-    textAlign: "center",
+    textAlign: "center"
   },
   githubBox: {
     border: "2px solid orange",
     borderRadius: "5px",
     textAlign: "center",
     textDecoration: "none",
-    backgroundColor: "orange"
+    backgroundColor: "orange",
+    boxShadow: '1px 0 2px black'
   },
   descriptionBox: {
     position: "absolute",
@@ -52,27 +57,23 @@ const styles = {
     padding: "3px"
   },
   projectTitle: {
+    fontFamily: "sans-serif",
     color: "black"
   },
   projectText: {
+    fontFamily: "sans-serif",
     color: "black"
   },
   projectImage: {
     height: "250px",
     width: "380px",
     border: "2px solid orange",
-    borderRadius: "5px"
+    borderRadius: "5px",
+    boxShadow: '1px 0 2px black'
   },
 }
 
 const projects = [
-  {
-    title: "GoN'Fit",
-    description: "Coming Soon",
-    image: ComingSoon,
-    deployed: "comingsoon",
-    github: "comingsoon"
-  },
   {
     title: "Musinion",
     description: "Social media platform to read and post reviews about albums",
@@ -129,6 +130,20 @@ const projects = [
     deployed: "https://app.screencastify.com/manage/videos/6a32j7MUZwEHPaj6BMtB",
     github: "https://github.com/BradenKim22/node-more-please"
   },
+  {
+    title: "GoN'Fit",
+    description: "Coming Soon",
+    image: ComingSoon,
+    deployed: "comingsoon",
+    github: "comingsoon"
+  },
+  // {
+  //   title: "KidsCookie Co.",
+  //   description: "Coming Soon",
+  //   image: ComingSoon,
+  //   deployed: "comingsoon",
+  //   github: "comingsoon"
+  // },
 ]
 
 // Basic uploading pictures and viewing them on the front end.
@@ -150,7 +165,7 @@ export default function Portfolio() {
 
   return (
     <main style={styles.portfolioMain}>
-      <h2>My Work</h2>
+      <h2 style={styles.mywork}>My Work</h2>
       <section style={styles.projectContainer}>
         {projectData}
       </section>
