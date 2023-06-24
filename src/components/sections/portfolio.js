@@ -13,12 +13,12 @@ import ComingSoon from "../assets/comingsoon.png";
 const styles = {
   mywork: {
     fontFamily: "sans-serif",
-    fontSize: "22pt"
+    fontSize: "22pt",
   },
   portfolioMain: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "Center"
+    alignItems: "Center",
   },
   projectContainer: {
     display: "flex",
@@ -26,17 +26,17 @@ const styles = {
     justifyContent: "space-around",
     flexWrap: "wrap",
     width: "75vw",
-    marginTop: "3%"
+    marginTop: "3%",
   },
   projectCard: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    marginBottom: "3%"
+    marginBottom: "3%",
   },
   deployedBox: {
     position: "relative",
-    textAlign: "center"
+    textAlign: "center",
   },
   githubBox: {
     border: "2px solid orange",
@@ -44,7 +44,7 @@ const styles = {
     textAlign: "center",
     textDecoration: "none",
     backgroundColor: "orange",
-    boxShadow: '1px 0 2px black'
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
   },
   descriptionBox: {
     position: "absolute",
@@ -54,24 +54,24 @@ const styles = {
     borderRadius: "5px",
     backgroundColor: "orange",
     opacity: "70%",
-    padding: "3px"
+    padding: "3px",
   },
   projectTitle: {
     fontFamily: "sans-serif",
-    color: "black"
+    color: "black",
   },
   projectText: {
     fontFamily: "sans-serif",
-    color: "black"
+    color: "black",
   },
   projectImage: {
     height: "250px",
     width: "380px",
     border: "2px solid orange",
     borderRadius: "5px",
-    boxShadow: '1px 0 2px black'
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
   },
-}
+};
 
 const projects = [
   {
@@ -79,63 +79,66 @@ const projects = [
     description: "Social media platform to read and post reviews about albums",
     image: Musinion,
     deployed: "https://musinion.herokuapp.com/",
-    github: "https://github.com/Teaom/Musinion"
+    github: "https://github.com/Teaom/Musinion",
   },
   {
     title: "TechBlog",
     description: "Platform for tech bloggers and readers",
     image: TechBlog,
     deployed: "https://fathomless-eyrie-09842.herokuapp.com/",
-    github: "https://github.com/BradenKim22/mvc-blog"
+    github: "https://github.com/BradenKim22/mvc-blog",
   },
   {
     title: "SkyJam",
     description: "Music generator based on the weather",
     image: SkyJam,
     deployed: "https://j3rkstore.github.io/weatheringo/",
-    github: "https://github.com/J3rkStore/weatheringo"
+    github: "https://github.com/J3rkStore/weatheringo",
   },
   {
     title: "WeatherDash",
     description: "Weather dashboard using OpenWeatherAPI",
     image: WeatherDash,
     deployed: "https://bradenkim22.github.io/on-the-go-weather/",
-    github: "https://github.com/BradenKim22/on-the-go-weather"
+    github: "https://github.com/BradenKim22/on-the-go-weather",
   },
   {
     title: "CodeQuiz",
     description: "Simple quiz testing Full-Stack bootcamp classmates",
     image: CodeQuiz,
     deployed: "https://bradenkim22.github.io/multiple-guess/",
-    github: "https://github.com/BradenKim22/multiple-guess"
+    github: "https://github.com/BradenKim22/multiple-guess",
   },
   {
     title: "NoteKeeper",
     description: "Notebook application using CRUD operations",
     image: NoteKeeper,
     deployed: "https://hidden-meadow-67344.herokuapp.com/",
-    github: "https://github.com/BradenKim22/backpack-note"
+    github: "https://github.com/BradenKim22/backpack-note",
   },
   {
     title: "BusinessManager",
-    description: "Backend navigator using CRUD operations for business management",
+    description:
+      "Backend navigator using CRUD operations for business management",
     image: Business,
-    deployed: "https://app.screencastify.com/manage/videos/4H9EO4hoZs6Nu2pawCBx",
-    github: "https://github.com/BradenKim22/business-management"
+    deployed:
+      "https://app.screencastify.com/manage/videos/4H9EO4hoZs6Nu2pawCBx",
+    github: "https://github.com/BradenKim22/business-management",
   },
   {
     title: "ReadmeGen",
     description: "Generate a README.md file using Node.js",
     image: ReadmeGen,
-    deployed: "https://app.screencastify.com/manage/videos/6a32j7MUZwEHPaj6BMtB",
-    github: "https://github.com/BradenKim22/node-more-please"
+    deployed:
+      "https://app.screencastify.com/manage/videos/6a32j7MUZwEHPaj6BMtB",
+    github: "https://github.com/BradenKim22/node-more-please",
   },
   {
     title: "GoN'Fit",
     description: "Coming Soon",
     image: ComingSoon,
     deployed: "comingsoon",
-    github: "comingsoon"
+    github: "comingsoon",
   },
   // {
   //   title: "KidsCookie Co.",
@@ -144,31 +147,29 @@ const projects = [
   //   deployed: "comingsoon",
   //   github: "comingsoon"
   // },
-]
+];
 
 // Basic uploading pictures and viewing them on the front end.
 export default function Portfolio() {
-  const projectData = projects.map((project) => 
-  <div style={styles.projectCard}>
-    <a href={project.deployed} target="_blank" style={styles.deployedBox}>
-      <img src={project.image} style={styles.projectImage}></img>
-      <div style={styles.descriptionBox}>
-        <h3 style={styles.projectTitle}>{project.title}</h3>
-        {/* <p style={styles.projectText}>{project.description}</p> */}
-      </div>
-    </a>
-    <a href={project.github} target="_blank" style={styles.githubBox}>
-      <h4 style={styles.projectTitle}>GitHub</h4>
-    </a>
-  </div>
-  );
+  const projectData = projects.map((project) => (
+    <div style={styles.projectCard}>
+      <a href={project.deployed} target="_blank" style={styles.deployedBox}>
+        <img src={project.image} style={styles.projectImage}></img>
+        <div style={styles.descriptionBox}>
+          <h3 style={styles.projectTitle}>{project.title}</h3>
+          {/* <p style={styles.projectText}>{project.description}</p> */}
+        </div>
+      </a>
+      <a href={project.github} target="_blank" style={styles.githubBox}>
+        <h4 style={styles.projectTitle}>GitHub</h4>
+      </a>
+    </div>
+  ));
 
   return (
     <main style={styles.portfolioMain}>
       <h2 style={styles.mywork}>My Work</h2>
-      <section style={styles.projectContainer}>
-        {projectData}
-      </section>
+      <section style={styles.projectContainer}>{projectData}</section>
     </main>
   );
 }

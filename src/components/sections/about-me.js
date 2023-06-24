@@ -29,7 +29,8 @@ const styles = {
     },
     image: {
       height: "400px",
-      borderRadius: "5px"
+      borderRadius: "5px",
+      boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
     }
 };
 

@@ -10,10 +10,12 @@ export default function Header({handleLinkClick, selectedLink}) {
       height: "11vh",
       margin: "3.5% 0 3.5% 0",
       backgroundColor: "orange",
+      boxShadow: "0px 2px rgba(20, 40, 65, 0.5)",
     },
     profile: {
       height: "200%",
       borderRadius: 50,
+      boxShadow: "2px 2px rgba(20, 40, 65, 0.5)"
     },
     name: {
       fontSize: "34pt",
