@@ -106,7 +106,7 @@ export default function Portfolio() {
 
   return (
     <main style={styles.portfolioMain}>
-      <h2 style={styles.mywork}>My Work</h2>
+      <h2 style={styles.myWork}>My Work</h2>
       <section style={styles.projectContainer}>{projectData}</section>
     </main>
   );
@@ -114,7 +114,7 @@ export default function Portfolio() {
 
 // Styles for the Portfolio
 const styles = {
-  mywork: {
+  myWork: {
     fontFamily: "sans-serif",
     fontSize: "22pt",
   },
