@@ -1,39 +1,7 @@
 import React from "react";
 import placeholder from "../assets/profile-image.png"
 
-const styles = {
-    aboutme: {
-        display: "flex",
-        flexDirection: "column",
-    },
-    sections: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginLeft: "12%",
-      marginRight: "12%",
-      marginBottom: "5%"
-    },
-    title: {
-      display: "flex",
-      justifyContent: "center",
-      fontFamily: "sans-serif",
-      fontSize: "22pt"
-    },
-    text: {
-      display: "flex",
-      justifyContent: "center",
-      width: "50vw",
-      fontFamily: "sans-serif",
-      fontSize: "16pt"
-    },
-    image: {
-      height: "400px",
-      borderRadius: "5px",
-      boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
-    }
-};
-
+// Data for the AboutMe section
 const meSections = [
   {
     title: "Bio",
@@ -62,7 +30,7 @@ const meSections = [
   }
 ];
 
-// About Me
+// Exported About Me Component
 export default function About() {
   const aboutMeData = meSections.map((section, index) => {
     // IF the meSection index is 0 or even number then do this..
@@ -94,3 +62,37 @@ export default function About() {
     </main>
   );
 }
+
+// Styling for About me
+const styles = {
+  aboutme: {
+      display: "flex",
+      flexDirection: "column",
+  },
+  sections: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginLeft: "12%",
+    marginRight: "12%",
+    marginBottom: "5%"
+  },
+  title: {
+    display: "flex",
+    justifyContent: "center",
+    fontFamily: "sans-serif",
+    fontSize: "22pt"
+  },
+  text: {
+    display: "flex",
+    justifyContent: "center",
+    width: "50vw",
+    fontFamily: "sans-serif",
+    fontSize: "16pt"
+  },
+  image: {
+    height: "400px",
+    borderRadius: "5px",
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
+  }
+};

@@ -10,69 +10,7 @@ import Business from "../assets/businessmanager.png";
 import ReadmeGen from "../assets/readmegen.png";
 import ComingSoon from "../assets/comingsoon.png";
 
-const styles = {
-  mywork: {
-    fontFamily: "sans-serif",
-    fontSize: "22pt",
-  },
-  portfolioMain: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "Center",
-  },
-  projectContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    flexWrap: "wrap",
-    width: "75vw",
-    marginTop: "3%",
-  },
-  projectCard: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    marginBottom: "3%",
-  },
-  deployedBox: {
-    position: "relative",
-    textAlign: "center",
-  },
-  githubBox: {
-    border: "2px solid orange",
-    borderRadius: "5px",
-    textAlign: "center",
-    textDecoration: "none",
-    backgroundColor: "orange",
-    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
-  },
-  descriptionBox: {
-    position: "absolute",
-    top: "5%",
-    left: "5%",
-    right: "5%",
-    borderRadius: "5px",
-    backgroundColor: "orange",
-    opacity: "70%",
-    padding: "3px",
-  },
-  projectTitle: {
-    fontFamily: "sans-serif",
-    color: "black",
-  },
-  projectText: {
-    fontFamily: "sans-serif",
-    color: "black",
-  },
-  projectImage: {
-    height: "250px",
-    width: "380px",
-    border: "2px solid orange",
-    borderRadius: "5px",
-    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
-  },
-};
-
+// Data for the Portfolio section
 const projects = [
   {
     title: "Musinion",
@@ -149,7 +87,7 @@ const projects = [
   // },
 ];
 
-// Basic uploading pictures and viewing them on the front end.
+// Exported Portfolio Component
 export default function Portfolio() {
   const projectData = projects.map((project) => (
     <div style={styles.projectCard}>
@@ -173,3 +111,67 @@ export default function Portfolio() {
     </main>
   );
 }
+
+// Styles for the Portfolio
+const styles = {
+  mywork: {
+    fontFamily: "sans-serif",
+    fontSize: "22pt",
+  },
+  portfolioMain: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "Center",
+  },
+  projectContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    flexWrap: "wrap",
+    width: "75vw",
+    marginTop: "3%",
+  },
+  projectCard: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginBottom: "3%",
+  },
+  deployedBox: {
+    position: "relative",
+    textAlign: "center",
+  },
+  githubBox: {
+    border: "2px solid orange",
+    borderRadius: "5px",
+    textAlign: "center",
+    textDecoration: "none",
+    backgroundColor: "orange",
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+  },
+  descriptionBox: {
+    position: "absolute",
+    top: "5%",
+    left: "5%",
+    right: "5%",
+    borderRadius: "5px",
+    backgroundColor: "orange",
+    opacity: "70%",
+    padding: "3px",
+  },
+  projectTitle: {
+    fontFamily: "sans-serif",
+    color: "black",
+  },
+  projectText: {
+    fontFamily: "sans-serif",
+    color: "black",
+  },
+  projectImage: {
+    height: "250px",
+    width: "380px",
+    border: "2px solid orange",
+    borderRadius: "5px",
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+  },
+};
