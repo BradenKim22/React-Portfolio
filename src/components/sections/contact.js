@@ -1,72 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Helpers } from "../../utils/helper";
+import emailjs from "@emailjs/browser";
 
-const styles = {
-  pageSection: {
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "3%",
-    marginTop: "5%",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    borderRadius: "5px",
-    backgroundColor: "orange",
-    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
-    padding: "50px",
-  },
-  h3: {
-    fontFamily: "sans-serif",
-    fontSize: "22pt",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  text: {
-    fontFamily: "sans-serif",
-    fontSize: "16pt",
-    marginBottom: "5px",
-    marginTop: "",
-  },
-  input: {
-    fontFamily: "sans-serif",
-    fontSize: "14pt",
-  },
-  messageArea: {
-    fontFamily: "sans-serif",
-    fontSize: "14pt",
-    height: "150px",
-    width: "650px",
-  },
-  button: {
-    alignSelf: "center",
-    marginTop: "25px",
-    fontFamily: "sans-serif",
-    fontSize: "16pt",
-    width: "100px",
-    borderRadius: "5px",
-    color: "orange",
-    backgroundColor: "black",
-    cursor: "pointer",
-  },
-  error: {
-    fontFamily: "sans-serif",
-    fontSize: "10pt",
-    color: "purple",
-    textAlign: "right",
-  },
-  sent: {
-    fontFamily: "sans-serif",
-    fontSize: "12pt",
-    color: "black",
-    textAlign: "center",
-  },
-};
-
+// Exported Contact Component
 export default function Contact() {
+  // EmailJS
+  const form = useRef();
+
+  const sendEmail = () => {
+    emailjs
+      .sendForm(
+        "service_v9iomjy",
+        "template_h8b4bcl",
+        form.current,
+        "dJaxNd8rkbAirHzfW"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSent(`Hello ${firstName}, your message has been sent!`);
+          setSent2(
+            `I will contact you at your email ${email}. Thank you for reaching out.`
+          );
+          setSent3(
+            "Look for my response within 5 business days, from Bradenkim22@gmail.com."
+          );
+
+          setFirstName("");
+          setEmail("");
+          setMessage("");
+          setTimeout(() => {
+            setSent("");
+            setSent2("");
+            setSent3("");
+          }, 15000);
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Message was unable to send, please try again later.");
+        }
+      );
+  };
   // Make the useState collect each variable (name, email, and message);
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -134,23 +108,7 @@ export default function Contact() {
     ) {
       alert("Message did not send, please fill in each box.");
     } else {
-      // ________________________________________________________________________________Add the sending function here!!!_____________________________________________________________
-      setSent(`Hello ${firstName}, your message has been sent!`);
-      setSent2(
-        `I will contact you at your email ${email}. Thank you for reaching out.`
-      );
-      setSent3(
-        "Look for my response within 5 business days, from Bradenkim22@gmail.com."
-      );
-
-      setFirstName("");
-      setEmail("");
-      setMessage("");
-      setTimeout(() => {
-        setSent("");
-        setSent2("");
-        setSent3("");
-      }, 15000);
+      sendEmail();
     }
   };
 
@@ -158,7 +116,7 @@ export default function Contact() {
     <section style={styles.pageSection}>
       <div style={styles.container}>
         <h3 style={styles.h3}>Contact Me</h3>
-        <form style={styles.form} className="contact-form">
+        <form ref={form} style={styles.form} className="contact-form">
           <p style={styles.text}>Name:</p>
           <input
             style={styles.input}
@@ -168,7 +126,7 @@ export default function Contact() {
             // The value is to clear the name at the end after hitting send.
             value={firstName}
             type="text"
-              placeholder="Ex. Bill Gates"
+            placeholder="Ex. Bill Gates"
           />
           <p style={styles.error}>{invalidName}</p>
           <p style={styles.text}>Email:</p>
@@ -178,8 +136,8 @@ export default function Contact() {
             onChange={handleInputChange}
             onBlur={handleOffClick}
             value={email}
-            type="text"
-              placeholder="Ex. billgates@aol.com"
+            type="email"
+            placeholder="Ex. billgates@aol.com"
           />
           <p style={styles.error}>{invalidEmail}</p>
           <p style={styles.text}>Message:</p>
@@ -190,13 +148,14 @@ export default function Contact() {
             onBlur={handleOffClick}
             value={message}
             type="text"
-              placeholder="Hello Braden, I would like to contact you about your work. Please call or message me at (808)781-5233"
+            placeholder="Hello Braden, I would like to contact you about your work. Please call or message me at (808)781-5233"
           />
           <p style={styles.error}>{invalidMessage}</p>
           <button
             style={styles.button}
             type="button"
             onClick={handleFormSubmit}
+            value="Send"
           >
             Send
           </button>
@@ -212,3 +171,69 @@ export default function Contact() {
     </section>
   );
 }
+
+// Styling for the contact component
+const styles = {
+  pageSection: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "3%",
+    marginTop: "5%",
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    borderRadius: "5px",
+    backgroundColor: "orange",
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+    padding: "50px",
+  },
+  h3: {
+    fontFamily: "sans-serif",
+    fontSize: "22pt",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  text: {
+    fontFamily: "sans-serif",
+    fontSize: "16pt",
+    marginBottom: "5px",
+    marginTop: "",
+  },
+  input: {
+    fontFamily: "sans-serif",
+    fontSize: "14pt",
+  },
+  messageArea: {
+    fontFamily: "sans-serif",
+    fontSize: "14pt",
+    height: "150px",
+    width: "650px",
+  },
+  button: {
+    alignSelf: "center",
+    marginTop: "25px",
+    fontFamily: "sans-serif",
+    fontSize: "16pt",
+    width: "100px",
+    borderRadius: "5px",
+    color: "orange",
+    backgroundColor: "black",
+    cursor: "pointer",
+  },
+  error: {
+    fontFamily: "sans-serif",
+    fontSize: "10pt",
+    color: "purple",
+    textAlign: "right",
+  },
+  sent: {
+    fontFamily: "sans-serif",
+    fontSize: "12pt",
+    color: "black",
+    textAlign: "center",
+  },
+};
