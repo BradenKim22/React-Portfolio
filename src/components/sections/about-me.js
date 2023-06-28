@@ -1,5 +1,8 @@
 import React from "react";
-import placeholder from "../assets/profile-image.png"
+import Horse from "../assets/images/horse.png"
+import Tree from "../assets/images/tree.png"
+import Cliff from "../assets/images/cliff.png"
+import Fish from "../assets/images/fish.png"
 
 // Data for the AboutMe section
 const meSections = [
@@ -11,22 +14,22 @@ const meSections = [
       enjoyed working on Full-Stack web developement projects. MERN stack projects are where I spend more of my time now.
       I always love learning new code and discovering different perspectives in coding. I've been able to learn how to
       code for a mobile app using react native in my freetime for a side project.`,
-    image: placeholder
+    image: Horse
   },
   {
     title: "Travel",
     description: ``,
-    image: placeholder
+    image: Tree
   },
   {
     title: "Hobbies",
     description: ``,
-    image: placeholder
+    image: Fish
   },
   {
     title: "Entertainment",
     description: ``,
-    image: placeholder
+    image: Cliff
   }
 ];
 
@@ -92,6 +95,7 @@ const styles = {
   },
   image: {
     height: "400px",
+    border: "2px solid orange",
     borderRadius: "5px",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
   }
