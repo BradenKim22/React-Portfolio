@@ -1,5 +1,5 @@
 import React from "react";
-import profileImage from "./assets/profile-image.png";
+import profileImage from "./assets/images/profile-image.png";
 
 export default function Header({handleLinkClick, selectedLink}) {
   const styles = {

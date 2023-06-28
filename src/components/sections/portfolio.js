@@ -1,14 +1,14 @@
 import React from "react";
-// import GonFit from "../assets/gonfit.png";
-import Musinion from "../assets/musinion.png";
-import TechBlog from "../assets/techblog.png";
-import SkyJam from "../assets/skyjam.png";
-import WeatherDash from "../assets/weatherdash.png";
-import CodeQuiz from "../assets/codequiz.png";
-import NoteKeeper from "../assets/notekeeper.png";
-import Business from "../assets/businessmanager.png";
-import ReadmeGen from "../assets/readmegen.png";
-import ComingSoon from "../assets/comingsoon.png";
+// import GonFit from "../assets/images/gonfit.png";
+import Musinion from "../assets/images/musinion.png";
+import TechBlog from "../assets/images/techblog.png";
+import SkyJam from "../assets/images/skyjam.png";
+import WeatherDash from "../assets/images/weatherdash.png";
+import CodeQuiz from "../assets/images/codequiz.png";
+import NoteKeeper from "../assets/images/notekeeper.png";
+import Business from "../assets/images/businessmanager.png";
+import ReadmeGen from "../assets/images/readmegen.png";
+import ComingSoon from "../assets/images/comingsoon.png";
 
 // Data for the Portfolio section
 const projects = [

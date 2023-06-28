@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import ResumePDF from "../assets/braden-kim-resume.pdf";
+import ResumePDF from "../assets/pdf/braden-kim-resume.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "../assets/css/resume.css"
 
