@@ -1,76 +1,73 @@
 import React from "react";
-import Horse from "../assets/images/horse.png"
-import Tree from "../assets/images/tree.png"
-import Cliff from "../assets/images/cliff.png"
-import Fish from "../assets/images/fish.png"
+import Horse from "../assets/images/horse.png";
+import Tree from "../assets/images/tree.png";
+import Cliff from "../assets/images/cliff.png";
+import Fish from "../assets/images/fish.png";
 
 // Data for the AboutMe section
 const meSections = [
   {
-    title: "Bio",
-    description: 
-      `My name is Braden. I have lived in five different states and two other countries than the United States.
-      I am currently living in St. George, Utah. Since I have started in the tech industry recently, I've really
-      enjoyed working on Full-Stack web developement projects. MERN stack projects are where I spend more of my time now.
-      I always love learning new code and discovering different perspectives in coding. I've been able to learn how to
-      code for a mobile app using react native in my freetime for a side project.`,
-    image: Horse
+    title: "Who I Am",
+    description: `Welcome to my portfolio, I am Braden Kim, sometimes known as your go-to software developer.
+     I've worked my way up in the hospitality and tourism industry, but found my passion in software technology.
+     I've never been more excited to learn and work on new, unique projects than now, in this industry.`,
+    image: Horse,
   },
   {
     title: "Travel",
-    description: ``,
-    image: Tree
+    description: `I have had a passport since before I turned 1 year old. I have been to more than 18 countries and 4 continents.
+     Of that, I have lived in 5 states and 3 different countries. Traveling helps me to understand how people connect and interact with eachother.
+      I enjoy the beauty of diversity in all things, especially culture. A few of my favorite places to visit includes Korea,
+       Hong Kong, Hawaii, and Italy. I firmly believe that a work life balance atmosphere can enhance performance.`,
+    image: Tree,
   },
   {
     title: "Hobbies",
-    description: ``,
-    image: Fish
+    description: `On top of school and work, I spend time to develop different hobbies. I love fishing in the Pacific Ocean,
+     playing volleyball, picking up new code, and spending time with family and friends. I don't like coding, actually,
+      I freakin' love it. At times I may be quite, but I am a proven good team player.`,
+    image: Fish,
   },
   {
     title: "Entertainment",
-    description: ``,
-    image: Cliff
-  }
+    description: `Other than sports and physical hobbies, I find entertainment playing games, watching anime, and listening to good music.
+     I tend to play games with my friends or family. One would include Naraka Bladepoint. Some of my favorite anime are Demon Slayer,
+      Attack on Titan, and Fairy Tail.`,
+    image: Cliff,
+  },
 ];
 
 // Exported About Me Component
 export default function About() {
   const aboutMeData = meSections.map((section, index) => {
     // IF the meSection index is 0 or even number then do this..
-    return (index %2 == 0) ?
-    <section style={styles.sections}>
-      <div>
-        <h2 style={styles.title}>{section.title}</h2>
-        <p style={styles.text}>
-          {section.description}
-        </p>
-      </div>
-      <img src={section.image} style={styles.image}></img>
-    </section>
-    :
-    <section style={styles.sections}>
-      <img src={section.image} style={styles.image}></img>
-      <div>
-        <h2 style={styles.title}>{section.title}</h2>
-        <p style={styles.text}>
-          {section.description}
-        </p>
-      </div>
-    </section>
+    return index % 2 == 0 ? (
+      <section style={styles.sections}>
+        <div>
+          <h2 style={styles.title}>{section.title}</h2>
+          <p style={styles.text}>{section.description}</p>
+        </div>
+        <img src={section.image} style={styles.image}></img>
+      </section>
+    ) : (
+      <section style={styles.sections}>
+        <img src={section.image} style={styles.image}></img>
+        <div>
+          <h2 style={styles.title}>{section.title}</h2>
+          <p style={styles.text}>{section.description}</p>
+        </div>
+      </section>
+    );
   });
 
-  return (
-    <main style={styles.aboutme}>
-      {aboutMeData}
-    </main>
-  );
+  return <main style={styles.aboutme}>{aboutMeData}</main>;
 }
 
 // Styling for About me
 const styles = {
   aboutme: {
-      display: "flex",
-      flexDirection: "column",
+    display: "flex",
+    flexDirection: "column",
   },
   sections: {
     display: "flex",
@@ -78,25 +75,25 @@ const styles = {
     alignItems: "center",
     marginLeft: "12%",
     marginRight: "12%",
-    marginBottom: "5%"
+    marginBottom: "5%",
   },
   title: {
     display: "flex",
     justifyContent: "center",
     fontFamily: "sans-serif",
-    fontSize: "22pt"
+    fontSize: "22pt",
   },
   text: {
     display: "flex",
     justifyContent: "center",
     width: "50vw",
     fontFamily: "sans-serif",
-    fontSize: "16pt"
+    fontSize: "16pt",
   },
   image: {
-    height: "400px",
+    width: "25%",
     border: "2px solid orange",
     borderRadius: "5px",
-    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
-  }
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+  },
 };
