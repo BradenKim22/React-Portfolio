@@ -26,7 +26,7 @@ export default function Resume() {
         <p>Download PDF</p>
       </a>
       <Document file={ResumePDF} onLoadSuccess={onDocumentLoadSuccess} >
-        <Page className="react-pdf__Page__canvas" pageNumber={pageNumber} renderTextLayer={true} />
+        <Page className="react-pdf__Page__canvas" pageNumber={pageNumber} renderTextLayer={false} onLoadError={console.error} />
       </Document>
       <nav style={styles.navPDF} >
         <button onClick={goToPrevPage} style={styles.button} >Prev</button>
