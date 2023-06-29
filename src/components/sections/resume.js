@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page, pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import ResumePDF from "../assets/pdf/braden-kim-resume.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "../assets/css/resume.css"
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 // My Resume and List of Proficiencies
 export default function Resume() {
