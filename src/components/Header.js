@@ -60,7 +60,7 @@ const styles = {
     margin: "3.5% 0 3.5% 0",
     backgroundColor: "orange",
     boxShadow: "0px 2px rgba(20, 40, 65, 0.5)",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       height: "8vh",
       margin: "8% 0 8% 0",
     },
@@ -73,7 +73,7 @@ const styles = {
     height: "200%",
     borderRadius: 50,
     boxShadow: "2px 2px rgba(20, 40, 65, 0.5)",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       height: "200%",
     },
     "@media (max-width: 500px)": {
@@ -84,7 +84,7 @@ const styles = {
     fontSize: "34pt",
     fontFamily: "sans-serif",
     color: "black",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       fontSize: "28pt",
     },
     "@media (max-width: 500px)": {
@@ -95,7 +95,7 @@ const styles = {
     display: "flex",
     justifyContent: "space-evenly",
     width: "30%",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       display: "block",
       position: "absolute",
       top: "15%",
@@ -115,7 +115,7 @@ const styles = {
     padding: "1%",
     cursor: "pointer",
     color: "black",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       margin: "0 .7% 0 .7%",
       padding: ".5%",
       fontSize: "14pt",
@@ -134,7 +134,7 @@ const styles = {
     color: "orange",
     backgroundColor: "black",
     borderRadius: "5px",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       margin: "0 .7% 0 .7%",
       padding: ".5%",
       fontSize: "14pt",

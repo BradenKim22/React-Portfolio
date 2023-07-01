@@ -83,7 +83,7 @@ const styles = {
     marginLeft: "12%",
     marginRight: "12%",
     marginBottom: "5%",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       width: "80vw"
     },
     "@media (max-width: 500px)": {
@@ -102,7 +102,7 @@ const styles = {
     width: "50vw",
     fontFamily: "sans-serif",
     fontSize: "16pt",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       textAlign: "center",
     },
     "@media (max-width: 500px)": {
@@ -114,7 +114,7 @@ const styles = {
     border: "2px solid orange",
     borderRadius: "5px",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       width: "25vw",
     },
     "@media (max-width: 500px)": {

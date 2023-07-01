@@ -133,7 +133,7 @@ const styles = {
     flexWrap: "wrap",
     width: "80vw",
     marginTop: "3%",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       width: "90vw",
     },
     "@media (max-width: 500px)": {
@@ -185,7 +185,7 @@ const styles = {
     border: "2px solid orange",
     borderRadius: "5px",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
-    "@media (max-width: 1000px)": {
+    "@media (max-width: 1280px)": {
       width: "40vw",
     },
     "@media (max-width: 500px)": {
