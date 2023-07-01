@@ -89,6 +89,7 @@ const styles = {
     backgroundColor: "orange",
     borderRadius: "5px",
     cursor: "pointer",
+    border: "1px solid black",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
   },
 };

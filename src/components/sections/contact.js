@@ -235,6 +235,7 @@ const styles = {
     borderRadius: "5px",
     color: "orange",
     backgroundColor: "black",
+    border: "1px solid black",
     cursor: "pointer",
     "@media (max-width: 500px)": {
       margin: "0",

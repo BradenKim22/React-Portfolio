@@ -98,13 +98,13 @@ const styles = {
     "@media (max-width: 1280px)": {
       display: "block",
       position: "absolute",
-      top: "16%",
+      top: "17%",
       left: "20%",
       textAlign: "center",
       width: "75%",
     },
     "@media (max-width: 500px)": {
-      top: "24%",
+      top: "25%",
       left: "0",
       width: "100%",
     },
