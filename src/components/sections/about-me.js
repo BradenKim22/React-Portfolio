@@ -84,7 +84,7 @@ const styles = {
     marginRight: "12%",
     marginBottom: "5%",
     "@media (max-width: 1280px)": {
-      width: "80vw"
+      width: "80vw",
     },
     "@media (max-width: 500px)": {
       flexDirection: "column",

@@ -144,7 +144,11 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    marginBottom: "3%",
+    margin: "3%",
+    "@media (max-width: 1280px)": {
+      margin: "0",
+      marginBottom: "3%",
+    },
     "@media (max-width: 500px)": {
       marginBottom: "15%",
     },

@@ -101,11 +101,12 @@ const styles = {
       top: "15%",
       left: "20%",
       textAlign: "center",
-      width: "100%",
+      width: "80%",
     },
     "@media (max-width: 500px)": {
       top: "23%",
       left: "0",
+      width: "100%",
     },
   },
   link: {
