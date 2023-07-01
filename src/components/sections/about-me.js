@@ -3,6 +3,7 @@ import Horse from "../assets/images/horse.png";
 import Tree from "../assets/images/tree.png";
 import Cliff from "../assets/images/cliff.png";
 import Fish from "../assets/images/fish.png";
+import Radium, { StyleRoot } from "radium";
 
 // Data for the AboutMe section
 const meSections = [
@@ -48,6 +49,7 @@ export default function About() {
           <p style={styles.text}>{section.description}</p>
         </div>
         <img src={section.image} style={styles.image}></img>
+        <img src={section.image} style={styles.image500}></img>
       </section>
     ) : (
       <section style={styles.sections}>
@@ -56,11 +58,16 @@ export default function About() {
           <h2 style={styles.title}>{section.title}</h2>
           <p style={styles.text}>{section.description}</p>
         </div>
+        <img src={section.image} style={styles.image500}></img>
       </section>
     );
   });
 
-  return <main style={styles.aboutme}>{aboutMeData}</main>;
+  return (
+    <StyleRoot>
+      <main style={styles.aboutme}>{aboutMeData}</main>;
+    </StyleRoot>
+  );
 }
 
 // Styling for About me
@@ -76,6 +83,12 @@ const styles = {
     marginLeft: "12%",
     marginRight: "12%",
     marginBottom: "5%",
+    "@media (max-width: 1000px)": {
+      width: "80vw"
+    },
+    "@media (max-width: 500px)": {
+      flexDirection: "column",
+    },
   },
   title: {
     display: "flex",
@@ -89,11 +102,33 @@ const styles = {
     width: "50vw",
     fontFamily: "sans-serif",
     fontSize: "16pt",
+    "@media (max-width: 1000px)": {
+      textAlign: "center",
+    },
+    "@media (max-width: 500px)": {
+      width: "90vw",
+    },
   },
   image: {
     width: "25%",
     border: "2px solid orange",
     borderRadius: "5px",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+    "@media (max-width: 1000px)": {
+      width: "25vw",
+    },
+    "@media (max-width: 500px)": {
+      display: "none",
+    },
+  },
+  image500: {
+    display: "none",
+    "@media (max-width: 500px)": {
+      display: "inline-flex",
+      width: "80vw",
+      border: "2px solid orange",
+      borderRadius: "5px",
+      boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+    },
   },
 };

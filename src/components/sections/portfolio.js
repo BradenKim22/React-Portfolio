@@ -1,4 +1,5 @@
 import React from "react";
+import Radium, { StyleRoot } from "radium";
 // import GonFit from "../assets/images/gonfit.png";
 import Musinion from "../assets/images/musinion.png";
 import TechBlog from "../assets/images/techblog.png";
@@ -105,10 +106,12 @@ export default function Portfolio() {
   ));
 
   return (
-    <main style={styles.portfolioMain}>
-      <h2 style={styles.myWork}>My Work</h2>
-      <section style={styles.projectContainer}>{projectData}</section>
-    </main>
+    <StyleRoot>
+      <main style={styles.portfolioMain}>
+        <h2 style={styles.myWork}>My Work</h2>
+        <section style={styles.projectContainer}>{projectData}</section>
+      </main>
+    </StyleRoot>
   );
 }
 
@@ -121,21 +124,30 @@ const styles = {
   portfolioMain: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "Center",
+    alignItems: "center",
   },
   projectContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
     flexWrap: "wrap",
-    width: "75vw",
+    width: "80vw",
     marginTop: "3%",
+    "@media (max-width: 1000px)": {
+      width: "90vw",
+    },
+    "@media (max-width: 500px)": {
+      width: "80vw",
+    },
   },
   projectCard: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     marginBottom: "3%",
+    "@media (max-width: 500px)": {
+      marginBottom: "15%",
+    },
   },
   deployedBox: {
     position: "relative",
@@ -173,5 +185,11 @@ const styles = {
     border: "2px solid orange",
     borderRadius: "5px",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
+    "@media (max-width: 1000px)": {
+      width: "40vw",
+    },
+    "@media (max-width: 500px)": {
+      width: "80vw",
+    },
   },
 };
