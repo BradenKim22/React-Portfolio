@@ -85,9 +85,15 @@ const styles = {
     marginBottom: "5%",
     "@media (max-width: 1280px)": {
       width: "80vw",
+      marginLeft: "8%",
+      marginRight: "8%",
+      marginBottom: "3%",
     },
     "@media (max-width: 500px)": {
       flexDirection: "column",
+      marginLeft: "1",
+      marginRight: "1",
+      marginBottom: "3%",
     },
   },
   title: {

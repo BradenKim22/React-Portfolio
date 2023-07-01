@@ -101,7 +101,7 @@ const styles = {
       top: "15%",
       left: "20%",
       textAlign: "center",
-      width: "80%",
+      width: "75%",
     },
     "@media (max-width: 500px)": {
       top: "23%",
