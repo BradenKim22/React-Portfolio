@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Helpers } from "../../utils/helper";
 import emailjs from "@emailjs/browser";
+import Radium, { StyleRoot } from "radium";
 
 // Exported Contact Component
 export default function Contact() {
@@ -113,62 +114,64 @@ export default function Contact() {
   };
 
   return (
-    <section style={styles.pageSection}>
-      <div style={styles.container}>
-        <h3 style={styles.h3}>Contact Me</h3>
-        <form ref={form} style={styles.form} className="contact-form">
-          <p style={styles.text}>Name:</p>
-          <input
-            style={styles.input}
-            name="firstName"
-            onChange={handleInputChange}
-            onBlur={handleOffClick}
-            // The value is to clear the name at the end after hitting send.
-            value={firstName}
-            type="text"
-            placeholder="Ex. Bill Gates"
-          />
-          <p style={styles.error}>{invalidName}</p>
-          <p style={styles.text}>Email:</p>
-          <input
-            style={styles.input}
-            name="email"
-            onChange={handleInputChange}
-            onBlur={handleOffClick}
-            value={email}
-            type="email"
-            placeholder="Ex. billgates@aol.com"
-          />
-          <p style={styles.error}>{invalidEmail}</p>
-          <p style={styles.text}>Message:</p>
-          <textarea
-            style={styles.messageArea}
-            name="message"
-            onChange={handleInputChange}
-            onBlur={handleOffClick}
-            value={message}
-            type="text"
-            placeholder="Hello Braden, I would like to contact you about your work. Please call or message me at (808)781-5233"
-          />
-          <p style={styles.error}>{invalidMessage}</p>
-          <button
-            style={styles.button}
-            type="button"
-            onClick={handleFormSubmit}
-            value="Send"
-          >
-            Send
-          </button>
-          <p style={styles.sent}>
-            {sent}
-            <br></br>
-            {sent2}
-            <br></br>
-            {sent3}
-          </p>
-        </form>
-      </div>
-    </section>
+    <StyleRoot>
+      <section style={styles.pageSection}>
+        <div style={styles.container}>
+          <h3 style={styles.h3}>Contact Me</h3>
+          <form ref={form} style={styles.form}>
+            <p style={styles.text}>Name:</p>
+            <input
+              style={styles.input}
+              name="firstName"
+              onChange={handleInputChange}
+              onBlur={handleOffClick}
+              // The value is to clear the name at the end after hitting send.
+              value={firstName}
+              type="text"
+              placeholder="Ex. Bill Gates"
+            />
+            <p style={styles.error}>{invalidName}</p>
+            <p style={styles.text}>Email:</p>
+            <input
+              style={styles.input}
+              name="email"
+              onChange={handleInputChange}
+              onBlur={handleOffClick}
+              value={email}
+              type="email"
+              placeholder="Ex. billgates@aol.com"
+            />
+            <p style={styles.error}>{invalidEmail}</p>
+            <p style={styles.text}>Message:</p>
+            <textarea
+              style={styles.messageArea}
+              name="message"
+              onChange={handleInputChange}
+              onBlur={handleOffClick}
+              value={message}
+              type="text"
+              placeholder="Hello Braden, I would like to contact you about your work. Please call or message me at (808)781-5233"
+            />
+            <p style={styles.error}>{invalidMessage}</p>
+            <button
+              style={styles.button}
+              type="button"
+              onClick={handleFormSubmit}
+              value="Send"
+            >
+              Send
+            </button>
+            <p style={styles.sent}>
+              {sent}
+              <br></br>
+              {sent2}
+              <br></br>
+              {sent3}
+            </p>
+          </form>
+        </div>
+      </section>
+    </StyleRoot>
   );
 }
 
@@ -188,10 +191,17 @@ const styles = {
     backgroundColor: "orange",
     boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
     padding: "50px",
+    "@media (max-width: 500px)": {
+      marginTop: "5%",
+      padding: "20px",
+    },
   },
   h3: {
     fontFamily: "sans-serif",
     fontSize: "22pt",
+    "@media (max-width: 500px)": {
+      margin: "0",
+    },
   },
   form: {
     display: "flex",
@@ -201,7 +211,7 @@ const styles = {
     fontFamily: "sans-serif",
     fontSize: "16pt",
     marginBottom: "5px",
-    marginTop: "",
+    marginTop: "0",
   },
   input: {
     fontFamily: "sans-serif",
@@ -212,6 +222,9 @@ const styles = {
     fontSize: "14pt",
     height: "150px",
     width: "650px",
+    "@media (max-width: 500px)": {
+      width: "80vw",
+    },
   },
   button: {
     alignSelf: "center",
@@ -223,6 +236,9 @@ const styles = {
     color: "orange",
     backgroundColor: "black",
     cursor: "pointer",
+    "@media (max-width: 500px)": {
+      margin: "0",
+    },
   },
   error: {
     fontFamily: "sans-serif",

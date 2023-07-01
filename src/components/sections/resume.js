@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import ResumePDF from "../assets/pdf/braden-kim-resume.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-import "../assets/css/resume.css"
+import "../assets/css/resume.css";
+import Radium, { StyleRoot } from "radium";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -22,22 +23,35 @@ export default function Resume() {
     setPageNumber(pageNumber + 1 >= numPages ? numPages : pageNumber + 1);
 
   return (
-    <div style={styles.resumeSec}>
-      <h2 style={styles.myResume}>My Resume</h2>
-      <a href={ResumePDF} download style={styles.download}>
-        <p>Download PDF</p>
-      </a>
-      <Document file={ResumePDF} onLoadSuccess={onDocumentLoadSuccess} >
-        <Page className="react-pdf__Page__canvas" pageNumber={pageNumber} renderTextLayer={false} onLoadError={console.error} />
-      </Document>
-      <nav style={styles.navPDF} >
-        <button onClick={goToPrevPage} style={styles.button} >Prev</button>
-        <p>Page {pageNumber} of {numPages}</p>
-        <button onClick={goToNextPage} style={styles.button} >Next</button>
-      </nav>
-    </div>
+    <StyleRoot>
+      <div style={styles.resumeSec}>
+        <h2 style={styles.myResume}>My Resume</h2>
+        <a href={ResumePDF} download style={styles.download}>
+          <p>Download PDF</p>
+        </a>
+        <Document file={ResumePDF} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page
+            className="react-pdf__Page__canvas"
+            pageNumber={pageNumber}
+            renderTextLayer={false}
+            onLoadError={console.error}
+          />
+        </Document>
+        <nav style={styles.navPDF}>
+          <button onClick={goToPrevPage} style={styles.button}>
+            Prev
+          </button>
+          <p>
+            Page {pageNumber} of {numPages}
+          </p>
+          <button onClick={goToNextPage} style={styles.button}>
+            Next
+          </button>
+        </nav>
+      </div>
+    </StyleRoot>
   );
-};
+}
 
 const styles = {
   myResume: {
@@ -75,6 +89,6 @@ const styles = {
     backgroundColor: "orange",
     borderRadius: "5px",
     cursor: "pointer",
-    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)"
+    boxShadow: "4px 2px rgba(20, 40, 65, 0.5)",
   },
 };
