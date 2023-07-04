@@ -65,7 +65,7 @@ export default function About() {
 
   return (
     <StyleRoot>
-      <main style={styles.aboutme}>{aboutMeData}</main>;
+      <main style={styles.aboutme}>{aboutMeData}</main>
     </StyleRoot>
   );
 }
