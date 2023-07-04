@@ -16,8 +16,8 @@ const meSections = [
   },
   {
     title: "Travel",
-    description: `I have had a passport since before I turned 1 year old. I have been to more than 18 countries and 4 continents.
-     Of that, I have lived in 5 states and 3 different countries. Traveling helps me to understand how people connect and interact with eachother.
+    description: `I have had a passport since before I turned 1 year old. I have been to more than 15 countries and 4 continents.
+     Of that, I have lived in 5 states and 3 different countries. Traveling helps me to understand how people connect and interact with each other.
       I enjoy the beauty of diversity in all things, especially culture. A few of my favorite places to visit includes Korea,
        Hong Kong, Hawaii, and Italy. I firmly believe that a work life balance atmosphere can enhance performance.`,
     image: Tree,
@@ -26,7 +26,7 @@ const meSections = [
     title: "Hobbies",
     description: `On top of school and work, I spend time to develop different hobbies. I love fishing in the Pacific Ocean,
      playing volleyball, picking up new code, and spending time with family and friends. I don't like coding, actually,
-      I freakin' love it. At times I may be quite, but I am a proven good team player.`,
+      I freakin' love it. At times I may be quiet, but I am a proven good team player.`,
     image: Fish,
   },
   {
