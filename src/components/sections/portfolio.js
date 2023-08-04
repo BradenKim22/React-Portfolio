@@ -19,7 +19,7 @@ const projects = [
     image: Musinion,
     deployed: "https://musinion.herokuapp.com/",
     github: "https://github.com/Teaom/Musinion",
-    offline: true,
+    online: false,
   },
   {
     title: "TechBlog",
@@ -27,7 +27,7 @@ const projects = [
     image: TechBlog,
     deployed: "https://fathomless-eyrie-09842.herokuapp.com/",
     github: "https://github.com/BradenKim22/mvc-blog",
-    offline: true,
+    online: false,
   },
   {
     title: "SkyJam",
@@ -56,7 +56,7 @@ const projects = [
     image: NoteKeeper,
     deployed: "https://hidden-meadow-67344.herokuapp.com/",
     github: "https://github.com/BradenKim22/backpack-note",
-    offline: true,
+    online: false,
   },
   {
     title: "BusinessManager",
@@ -95,7 +95,7 @@ const projects = [
 export default function Portfolio() {
   const projectData = projects.map((project) => (
     <div style={styles.projectCard}>
-      <a href={project.offline ? "https://www.alamy.com/stock-photo-offline-icon-offline-website-button-on-white-background-137345249.html" : project.deployed} target="_blank" style={styles.deployedBox}>
+      <a href={project.deployed} target="_blank" style={styles.deployedBox}>
         <img src={project.image} style={styles.projectImage}></img>
         <div style={styles.descriptionBox}>
           <h3 style={styles.projectTitle}>{project.title}</h3>
